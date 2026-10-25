@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>Dashboard - 아이봄 관리자 콘솔</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-on-surface": "#f4f0ea", "on-secondary": "#ffffff", "tertiary-container": "#cf953f", "error": "#ba1a1a", "on-secondary-fixed-variant": "#045134", "on-secondary-fixed": "#002112", "surface-tint": "#a13e2e", "sun-honey": "#F7B85E", "on-error": "#ffffff", "cream-ivory": "#FAF6F0", "primary-fixed": "#ffdad4", "surface-dim": "#dddad4", "baby-peach": "#F47D68", "outline": "#8a726d", "secondary-fixed": "#adf1ca", "tertiary-fixed": "#ffddb4", "secondary": "#276a4b", "inverse-primary": "#ffb4a6", "primary-fixed-dim": "#ffb4a6", "on-primary-fixed-variant": "#812719", "surface-container-lowest": "#ffffff", "on-primary-container": "#6b170b", "on-error-container": "#93000a", "on-tertiary-fixed": "#291800", "border-warm": "#EFE7DC", "outline-variant": "#ddc0bb", "sage-subtle": "#EBF4EF", "surface-container-high": "#ebe8e2", "primary-container": "#f47d68", "surface-bright": "#fdf9f3", "peach-subtle": "#FDECE7", "text-subtle": "#7C7571", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "on-secondary-container": "#2c6e4f", "primary": "#a13e2e", "surface-container-low": "#f7f3ed", "on-tertiary-fixed-variant": "#633f00", "surface-container": "#f1ede7", "on-surface": "#1c1c18", "text-charcoal": "#2E2B2A", "tertiary": "#825500", "honey-subtle": "#FEF6E9", "on-tertiary-container": "#4e3100", "sage-mint": "#6CAE8A", "on-primary": "#ffffff", "on-primary-fixed": "#400200", "secondary-fixed-dim": "#91d5af", "on-background": "#1c1c18", "secondary-container": "#aaefc7", "inverse-surface": "#31302d", "surface": "#fdf9f3", "background": "#fdf9f3", "tertiary-fixed-dim": "#fabb61", "surface-card": "#FFFFFF", "surface-variant": "#e6e2dc", "surface-container-highest": "#e6e2dc", "on-surface-variant": "#56423e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "space-xl": "2rem", "space-lg": "1.5rem", "margin-desktop": "2rem", "space-sm": "0.5rem", "gutter-sm": "0.75rem", "margin": "1rem", "space-xs": "0.25rem", "space-md": "1rem" }, fontFamily: { "body-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "display-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"] }, fontSize: { "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "display-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between max-w-[480px] mx-auto w-full"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-peach-subtle flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">shield_person</span></div><div class="flex flex-col"><div class="flex items-center gap-1"><span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide">iBom Admin</span><span class="px-1.5 py-0.2 bg-sage-subtle text-sage-mint font-label-sm text-[10px] rounded-full font-medium">운영자</span></div><span class="font-headline-sm text-headline-sm text-text-charcoal leading-none">Dashboard</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="시스템 알림" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-baby-peach ring-2 ring-surface"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_6px_rgba(161,62,46,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 max-w-[480px] mx-auto bg-surface min-h-screen px-margin"><div class="flex flex-col w-full pb-8">
+<!-- 1. 관리자 스테이터스 및 서버 동기화 바 -->
+<section class="flex flex-col gap-space-sm mb-space-md pt-space-xs">
+<div class="bg-surface-card rounded-xl p-space-md shadow-[0_2px_8px_rgba(92,60,48,0.04)] flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-sage-subtle text-sage-mint">
+<span class="material-symbols-outlined text-[18px]">cloud_done</span>
+<span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface-card animate-pulse"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-text-charcoal font-semibold">동기화 정상</span>
+<span class="font-label-sm text-label-sm text-text-subtle">06:28:34 갱신</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-subtle">아이봄 메인 관제 노드 (#AP-02)</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="새로고침" class="w-8 h-8 rounded-full bg-cream-ivory text-text-charcoal flex items-center justify-center hover:bg-peach-subtle hover:text-primary transition-all active:scale-95" id="btn-refresh">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+</div>
+<!-- 당직 관리자 카드 -->
+<div class="bg-surface-container-low rounded-xl px-space-md py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold">ON 당직</span>
+<span class="font-label-md text-label-md text-text-charcoal font-semibold">김지원</span>
+<span class="font-label-sm text-label-sm text-text-subtle">최고운영관리자 (COO)</span>
+</div>
+<div class="flex items-center gap-1 text-sage-mint font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span>2단계 보안인증</span>
+</div>
+</div>
+</section>
+<!-- 2. 핵심 운영 KPI 카드 그리드 (2x2) -->
+<section class="flex flex-col gap-space-sm mb-space-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-text-charcoal font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">analytics</span>
+        오늘의 운영 KPI
+      </h2>
+<span class="font-label-sm text-label-sm text-text-subtle">실시간 자동 집계</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- KPI 1: 누적 회원수 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-[0_2px_8px_rgba(92,60,48,0.03)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="w-7 h-7 rounded-lg bg-peach-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">group</span>
+</div>
+<span class="px-1.5 py-0.5 rounded-full bg-peach-subtle text-primary font-label-sm text-[10px] font-bold">+12.4%</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-subtle block">총 누적 회원</span>
+<div class="font-display-mobile text-display-mobile text-text-charcoal font-bold leading-tight mt-0.5">48,290<span class="font-label-md text-label-md font-medium text-text-subtle ml-0.5">명</span></div>
+</div>
+<div class="mt-2 pt-2 bg-cream-ivory/60 rounded-lg px-2 py-1">
+<span class="font-label-sm text-[10px] text-text-subtle">전월 대비 순증 +5,320</span>
+</div>
+</div>
+<!-- KPI 2: 등록 영유아 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-[0_2px_8px_rgba(92,60,48,0.03)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="w-7 h-7 rounded-lg bg-honey-subtle text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">child_care</span>
+</div>
+<span class="px-1.5 py-0.5 rounded-full bg-honey-subtle text-tertiary font-label-sm text-[10px] font-bold">1.08명/가구</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-subtle block">등록 영유아</span>
+<div class="font-display-mobile text-display-mobile text-text-charcoal font-bold leading-tight mt-0.5">52,140<span class="font-label-md text-label-md font-medium text-text-subtle ml-0.5">명</span></div>
+</div>
+<div class="mt-2 pt-2 bg-cream-ivory/60 rounded-lg px-2 py-1">
+<span class="font-label-sm text-[10px] text-text-subtle">평균 월령 8.4개월</span>
+</div>
+</div>
+<!-- KPI 3: 오늘 육아기록 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-[0_2px_8px_rgba(92,60,48,0.03)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="w-7 h-7 rounded-lg bg-sage-subtle text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-subtle block">오늘 육아기록</span>
+<div class="font-display-mobile text-display-mobile text-text-charcoal font-bold leading-tight mt-0.5">142,390<span class="font-label-md text-label-md font-medium text-text-subtle ml-0.5">건</span></div>
+</div>
+<div class="mt-2 pt-2 bg-cream-ivory/60 rounded-lg px-2 py-1">
+<span class="font-label-sm text-[10px] text-text-subtle">수유 · 수면 · 배변 활발</span>
+</div>
+</div>
+<!-- KPI 4: 마켓 일일 거래액 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-[0_2px_8px_rgba(92,60,48,0.03)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="w-7 h-7 rounded-lg bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+<span class="px-1.5 py-0.5 rounded-full bg-peach-subtle text-primary font-label-sm text-[10px] font-bold">대기 12건</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-subtle block">마켓 일일 거래액</span>
+<div class="font-headline-md text-headline-md text-text-charcoal font-bold leading-tight mt-1">3,480<span class="font-label-md text-label-md font-medium text-text-subtle ml-0.5">만원</span></div>
+</div>
+<div class="mt-2 pt-2 bg-cream-ivory/60 rounded-lg px-2 py-1">
+<span class="font-label-sm text-[10px] text-text-subtle">취소/환불 1건 (정상 범위)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. 실시간 긴급 이상 징후 & AI 모니터링 알림 배너 -->
+<section class="flex flex-col gap-space-xs mb-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<h2 class="font-headline-sm text-headline-sm text-text-charcoal font-bold">긴급 모니터링 알림</h2>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-error">대기 1건</span>
+</div>
+<div class="bg-surface-card rounded-xl p-space-md shadow-[0_4px_16px_rgba(186,26,26,0.08)] bg-gradient-to-br from-error-container/20 via-surface-card to-surface-card">
+<div class="flex items-start justify-between gap-space-sm mb-2.5">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-error-container text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-error">커뮤니티 광고/도배 스팸 의심</span>
+<span class="px-1.5 py-0.2 rounded-full bg-error text-on-error font-label-sm text-[10px] font-bold">AI 위험도 94%</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-subtle">감지 시각: 방금 전 (06:27)</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 mb-space-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-semibold text-text-charcoal">작성자: 강태양 (#U1027)</span>
+<span class="font-label-sm text-[11px] text-error font-medium">단시간 동일글 8회 반복</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-subtle line-clamp-2">
+          "[필독] 해외 직구 독일 힙 분유 1단계 파격 초특가 50% 할인 링크 공유합니다! 선착순 100명 혜택..."
+        </p>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<button class="h-10 rounded-full bg-error text-on-error font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-transform" id="btn-block-user">
+<span class="material-symbols-outlined text-[16px]">block</span>
+<span>즉시 차단 및 블라인드</span>
+</button>
+<button class="h-10 rounded-full bg-cream-ivory text-text-charcoal font-label-md text-label-md font-semibold flex items-center justify-center gap-1 hover:bg-surface-container active:scale-95 transition-all" id="btn-view-post">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>원문 검토하기</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 4. 회원 및 자녀 데이터 간편 조회 -->
+<section class="flex flex-col gap-space-sm mb-space-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-text-charcoal font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-baby-peach text-[20px]">manage_accounts</span>
+        회원 및 영유아 관리
+      </h2>
+<span class="font-label-sm text-label-sm text-primary font-semibold">총 48,290건</span>
+</div>
+<!-- 검색창 -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-text-subtle text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-xl bg-surface-card text-text-charcoal placeholder:text-text-subtle font-body-sm text-body-sm shadow-[0_1px_4px_rgba(92,60,48,0.03)] focus:outline-none focus:bg-white" placeholder="회원명, 휴대폰, 아기 이름 검색" type="text"/>
+<button aria-label="필터설정" class="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-lg flex items-center justify-center text-text-subtle hover:text-text-charcoal">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<!-- 필터 칩 목록 -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+<button class="px-3 py-1.5 rounded-full bg-peach-subtle text-primary font-label-sm text-label-sm font-bold flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+        전체보기
+      </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-card text-text-subtle font-label-sm text-label-sm font-medium hover:text-text-charcoal shrink-0">
+        이상 감지 (1)
+      </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-card text-text-subtle font-label-sm text-label-sm font-medium hover:text-text-charcoal shrink-0">
+        신규 가입 (오늘 142)
+      </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-card text-text-subtle font-label-sm text-label-sm font-medium hover:text-text-charcoal shrink-0">
+        수유 집중기 (0~6M)
+      </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-card text-text-subtle font-label-sm text-label-sm font-medium hover:text-text-charcoal shrink-0">
+        이유식기 (7~12M)
+      </button>
+</div>
+<!-- 회원 카드 리스트 -->
+<div class="flex flex-col gap-space-sm mt-1">
+<!-- 회원 1: 김서현 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-[0_2px_8px_rgba(92,60,48,0.03)] flex flex-col gap-2.5">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full bg-peach-subtle text-primary font-bold flex items-center justify-center font-headline-sm">
+              김
+            </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-text-charcoal font-bold">김서현</span>
+<span class="font-label-sm text-label-sm text-text-subtle font-medium">#U1024</span>
+<span class="px-1.5 py-0.2 rounded-full bg-sage-subtle text-sage-mint font-label-sm text-[10px] font-semibold">우수 케어러</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-subtle">서울시 성동구 · 가입 184일차</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-subtle text-[18px]">chevron_right</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-peach-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">face</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-text-charcoal">서아 (여아, 6개월)</span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-text-subtle">
+<span>기록 <b class="text-text-charcoal">184일 연속</b></span>
+<span>·</span>
+<span>쇼핑주문 <b class="text-text-charcoal">8건</b></span>
+</div>
+</div>
+</div>
+<!-- 회원 2: 이도윤 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-[0_2px_8px_rgba(92,60,48,0.03)] flex flex-col gap-2.5">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full bg-honey-subtle text-tertiary font-bold flex items-center justify-center font-headline-sm">
+              이
+            </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-text-charcoal font-bold">이도윤</span>
+<span class="font-label-sm text-label-sm text-text-subtle font-medium">#U1025</span>
+<span class="px-1.5 py-0.2 rounded-full bg-honey-subtle text-tertiary font-label-sm text-[10px] font-semibold">마켓 VIP</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-subtle">서울시 마포구 · 가입 92일차</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-subtle text-[18px]">chevron_right</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-sage-subtle text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">face_2</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-text-charcoal">하람 (남아, 11개월)</span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-text-subtle">
+<span>기록 <b class="text-text-charcoal">92일 연속</b></span>
+<span>·</span>
+<span>쇼핑주문 <b class="text-text-charcoal">19건</b></span>
+</div>
+</div>
+</div>
+<!-- 회원 3: 강태양 (요주의 대상) -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-[0_2px_8px_rgba(92,60,48,0.03)] flex flex-col gap-2.5 bg-gradient-to-r from-error-container/10 to-surface-card">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full bg-error-container text-error font-bold flex items-center justify-center font-headline-sm">
+              강
+            </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-text-charcoal font-bold">강태양</span>
+<span class="font-label-sm text-label-sm text-text-subtle font-medium">#U1027</span>
+<span class="px-1.5 py-0.2 rounded-full bg-error text-on-error font-label-sm text-[10px] font-bold">요주의 관리</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-subtle">경기도 성남시 분당구 · 신규</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-error text-[18px]">report</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-cream-ivory text-text-subtle flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">pregnant_woman</span>
+</div>
+<span class="font-label-md text-label-md font-medium text-text-subtle">아기 미등록 (임신중 표기)</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-error font-semibold">
+<span>신고 접수 1건</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 회원 전체보기 버튼 -->
+<button class="w-full h-12 rounded-xl bg-surface-card text-text-charcoal hover:text-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 shadow-[0_1px_4px_rgba(92,60,48,0.03)] active:scale-[0.99] transition-all">
+<span>회원 데이터 전체보기 (48,290건)</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</section>
+<!-- 5. 영유아 월령별 분포 & 시스템 통계 미니 인사이트 -->
+<section class="flex flex-col gap-space-sm mb-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-text-charcoal font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">insights</span>
+        월령 분포 및 시스템 상태
+      </h2>
+<span class="font-label-sm text-label-sm text-text-subtle">주간 트렌드</span>
+</div>
+<div class="bg-surface-card rounded-xl p-space-md shadow-[0_2px_8px_rgba(92,60,48,0.03)] flex flex-col gap-space-md">
+<!-- 월령별 게이지 바 -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-charcoal font-semibold">영유아 월령 구간별 비중</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">7~12개월 최다 (42%)</span>
+</div>
+<!-- 스택 프로그레스 바 -->
+<div class="w-full h-3 rounded-full bg-cream-ivory overflow-hidden flex">
+<div class="bg-baby-peach h-full" style="width: 38%;" title="신생아~6개월: 38%"></div>
+<div class="bg-sun-honey h-full" style="width: 42%;" title="7~12개월: 42%"></div>
+<div class="bg-sage-mint h-full" style="width: 20%;" title="13개월 이상: 20%"></div>
+</div>
+<!-- 범례 -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-baby-peach"></span>
+<span class="font-label-sm text-label-sm text-text-subtle">신생아~6M <b class="text-text-charcoal font-semibold">38%</b></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-sun-honey"></span>
+<span class="font-label-sm text-label-sm text-text-subtle">7~12M <b class="text-text-charcoal font-semibold">42%</b></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-sage-mint"></span>
+<span class="font-label-sm text-label-sm text-text-subtle">13M+ <b class="text-text-charcoal font-semibold">20%</b></span>
+</div>
+</div>
+</div>
+<!-- 예방접종 카카오 알림톡 발송 현황 카드 -->
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-honey-subtle text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md font-bold text-text-charcoal">정기 예방접종 알림톡 발송</span>
+<span class="font-label-sm text-[10px] px-1 bg-sage-subtle text-sage-mint rounded font-semibold">완료</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-subtle">오늘 대상 1,480명 전송 성공</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">99.8%</span>
+<span class="block font-label-sm text-[10px] text-text-subtle">성공률</span>
+</div>
+</div>
+<!-- 퀵 서브 액션 버튼 그리드 -->
+<div class="grid grid-cols-2 gap-2 pt-0.5">
+<button class="h-9 rounded-lg bg-cream-ivory text-text-charcoal hover:text-primary font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">health_and_safety</span>
+<span>이상 징후 룰셋 설정</span>
+</button>
+<button class="h-9 rounded-lg bg-cream-ivory text-text-charcoal hover:text-primary font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>통계 데이터 CSV 내보내기</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<script>
+  (function() {
+    const btnRefresh = document.getElementById('btn-refresh');
+    if (btnRefresh) {
+      btnRefresh.addEventListener('click', function() {
+        const icon = this.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.classList.add('animate-spin');
+          setTimeout(() => {
+            icon.classList.remove('animate-spin');
+          }, 800);
+        }
+      });
+    }
+
+    const btnBlock = document.getElementById('btn-block-user');
+    if (btnBlock) {
+      btnBlock.addEventListener('click', function() {
+        if (confirm('강태양(#U1027) 사용자를 즉시 활동 제한 및 해당 광고글을 비공개 블라인드 처리하시겠습니까?')) {
+          alert('차단 및 블라인드 조치가 완료되었습니다.');
+          const parentCard = this.closest('section');
+          if (parentCard) {
+            parentCard.style.opacity = '0.5';
+            this.textContent = '차단 처리 완료';
+            this.disabled = true;
+          }
+        }
+      });
+    }
+
+    const btnViewPost = document.getElementById('btn-view-post');
+    if (btnViewPost) {
+      btnViewPost.addEventListener('click', function() {
+        alert('신고 접수된 게시물 원문 모달을 호출합니다. (상세 본문 및 첨부 링크 미리보기)');
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_16px_rgba(92,60,48,0.05)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 max-w-[480px] mx-auto px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 transition-colors text-primary font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-label-sm">대시보드</span></a><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="logs-monitoring" href="#"><span class="material-symbols-outlined text-[22px]">monitor_heart</span><span class="font-label-sm text-label-sm">기록관제</span></a><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="community-moderation" href="#"><span class="material-symbols-outlined text-[22px]">forum</span><span class="font-label-sm text-label-sm">커뮤니티</span></a><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="place-store-manager" href="#"><span class="material-symbols-outlined text-[22px]">storefront</span><span class="font-label-sm text-label-sm">나들이·샵</span></a><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="system-settings" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="font-label-sm text-label-sm">운영설정</span></a></div></nav>
+<script id="ibom-sample1-router">
+(function() {
+  function go(page) {
+    if (window.parent && window.parent.navigateSample1) {
+      window.parent.navigateSample1(page);
+    } else {
+      window.location.href = page;
+    }
+  }
+
+  // 1. data-path 속성 기반 자동 매핑 (하단 네비게이션 바 & 헤더 & 관리자 메뉴)
+  const pathMap = {
+    'home': '홈.html',
+    'baby-log-home': '육아기록.html',
+    'community': '커뮤.html',
+    'community-feed': '커뮤.html',
+    'outing-map': '지도.html',
+    'market': '마켓.html',
+    'market-shop': '마켓.html',
+    'my-page': '마이페이지.html',
+    'mypage-settings': '마이페이지.html',
+    'baby-growth': '아기.html',
+    'dashboard': '관리자.html',
+    'member-child-management': '아기.html',
+    'community-moderation': '커뮤.html',
+    'market-settlement': '마켓.html',
+    'place-store-manager': '지도.html',
+    'logs-monitoring': '육아기록.html',
+    'system-settings': '관리자모바일.html'
+  };
+
+  document.querySelectorAll('[data-path]').forEach(el => {
+    const key = el.getAttribute('data-path');
+    if (pathMap[key]) {
+      if (el.tagName === 'A') el.setAttribute('href', pathMap[key]);
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        go(pathMap[key]);
+      });
+    }
+  });
+
+  // 2. 상단 헤더 공통 연결 (로고 -> 홈, 알림 -> 일정, 프로필 -> 마이페이지, 뒤로가기)
+  const header = document.querySelector('header');
+  if (header) {
+    const logoArea = header.querySelector('.flex.items-center.gap-space-sm, .flex.items-center.gap-3');
+    if (logoArea && !logoArea.querySelector('button')) {
+      logoArea.style.cursor = 'pointer';
+      logoArea.addEventListener('click', () => go('홈.html'));
+    }
+    header.querySelectorAll('button').forEach(btn => {
+      if (btn.innerText.includes('notifications')) {
+        btn.addEventListener('click', (e) => { e.preventDefault(); go('일정.html'); });
+      }
+      if (btn.getAttribute('aria-label') && btn.getAttribute('aria-label').includes('뒤로')) {
+        btn.onclick = (e) => {
+          e.preventDefault();
+          if (window.parent && window.parent.navigateBackSample1) {
+            window.parent.navigateBackSample1();
+          } else if (history.length > 1) {
+            history.back();
+          } else {
+            go('홈.html');
+          }
+        };
+      }
+    });
+    header.querySelectorAll('span.material-symbols-outlined').forEach(span => {
+      if (span.innerText.trim() === 'person') {
+        const parent = span.closest('div, a, button');
+        if (parent) {
+          parent.style.cursor = 'pointer';
+          parent.addEventListener('click', (e) => { e.preventDefault(); go('마이페이지.html'); });
+        }
+      }
+    });
+  }
+
+  // 3. 페이지별 세부 버튼 & 카드 자동 연결
+  document.querySelectorAll('button, a, section, div').forEach(el => {
+    const text = (el.innerText || '').trim();
+    const aria = el.getAttribute('aria-label') || '';
+
+    // [로그인.html]
+    if (el.id === 'login-btn' || (el.tagName === 'BUTTON' && (
+      text.includes('카카오로 3초 만에 시작하기') ||
+      text.includes('네이버로 시작하기') ||
+      text.includes('Apple로 로그인') ||
+      text.includes('먼저 둘러보기')
+    ))) {
+      el.addEventListener('click', () => go('홈.html'));
+    }
+    if (text.includes('1분만에 가입하고 육아 축하 웰컴팩 받기')) {
+      el.addEventListener('click', () => go('아기.html'));
+    }
+
+    // [아기.html]
+    if (el.id === 'submitBtn') {
+      el.onclick = (e) => {
+        e.preventDefault();
+        el.innerHTML = '<span class="material-symbols-outlined text-on-primary animate-spin text-[20px]">progress_activity</span><span class="text-on-primary font-headline-sm text-headline-sm font-bold">아이맞춤 환경 구성 중...</span>';
+        setTimeout(() => go('홈.html'), 600);
+      };
+    }
+
+    // [홈.html]
+    if (el.tagName === 'BUTTON' && text.includes('육아기록') && text.includes('빠른입력')) el.addEventListener('click', () => go('육아기록.html'));
+    if (el.tagName === 'BUTTON' && text.includes('동네톡') && text.includes('성동구')) el.addEventListener('click', () => go('커뮤.html'));
+    if (el.tagName === 'BUTTON' && text.includes('나들이지도') && text.includes('키즈존추천')) el.addEventListener('click', () => go('지도.html'));
+    if (el.tagName === 'BUTTON' && text.includes('육아마켓') && text.includes('득템찬스')) el.addEventListener('click', () => go('마켓.html'));
+    if (text === '생후 6개월차 chevron_right' || text === '오늘 우리 아이 브리핑') {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => go('육아기록.html'));
+    }
+    if (text.includes('1:1 이웃 챗 시작') && el.tagName === 'DIV') {
+      el.addEventListener('click', () => go('친구.html'));
+    }
+    if (text.includes('동네 모임방 만들기') && el.tagName === 'DIV') {
+      el.addEventListener('click', () => go('커뮤.html'));
+    }
+
+    // [육아기록.html]
+    if (text.includes('B형간염 3차 정기 접종일이에요') && el.tagName === 'SECTION') {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => go('일정.html'));
+    }
+    if (text.includes('우리 아기 성장 발달 곡선 확인하기') && el.tagName === 'DIV') {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => go('아기.html'));
+    }
+
+    // [일정.html]
+    if (aria === '아이 변경') {
+      el.addEventListener('click', () => go('아기.html'));
+    }
+
+    // [커뮤.html]
+    if (text.includes('동네 육아맘 2,410명 활동 중')) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => go('친구.html'));
+    }
+
+    // [마켓.html & 마켓랭킹.html]
+    if (text === '실시간 TOP' || (el.tagName === 'BUTTON' && text.includes('인기순')) || (el.tagName === 'BUTTON' && text.includes('룩북 구경'))) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => go('마켓랭킹.html'));
+    }
+    if (el.tagName === 'BUTTON' && text === '조회하기') {
+      el.addEventListener('click', () => go('아기.html'));
+    }
+    if (el.tagName === 'BUTTON' && text.includes('전체보기') && document.title.includes('Market')) {
+      el.addEventListener('click', () => go('마켓.html'));
+    }
+
+    // [마이페이지.html]
+    if (el.getAttribute('title') === '아기 추가' || el.id === 'babySwitchBtn') {
+      el.addEventListener('click', () => go('아기.html'));
+    }
+    if (aria === '프로필 편집') {
+      el.addEventListener('click', () => go('관리자모바일.html'));
+    }
+    if (el.tagName === 'BUTTON' && text === '로그아웃') {
+      el.addEventListener('click', () => go('로그인.html'));
+    }
+    if (el.tagName === 'A' && (text.includes('찜한 상품') || text.includes('최근 본 상품'))) {
+      el.setAttribute('href', '마켓랭킹.html');
+      el.addEventListener('click', (e) => { e.preventDefault(); go('마켓랭킹.html'); });
+    }
+    if (el.tagName === 'A' && (text.includes('작성 가능한 리뷰') || text.includes('나눔/판매 내역'))) {
+      el.setAttribute('href', '커뮤.html');
+      el.addEventListener('click', (e) => { e.preventDefault(); go('커뮤.html'); });
+    }
+  });
+
+  // 4. 단독 실행 시에도 언제든 모든 화면으로 점프할 수 있는 플로팅 퀵 메뉴 (iframe 내부가 아닐 때만 표시)
+  if (window.self === window.top) {
+    const navPages = [
+      { name: '🏠 홈', file: '홈.html' },
+      { name: '🍼 육아기록', file: '육아기록.html' },
+      { name: '📅 일정/알람', file: '일정.html' },
+      { name: '👶 아기등록', file: '아기.html' },
+      { name: '💬 커뮤니티', file: '커뮤.html' },
+      { name: '🤝 육아친구', file: '친구.html' },
+      { name: '🗺️ 나들이지도', file: '지도.html' },
+      { name: '🛍️ 마켓', file: '마켓.html' },
+      { name: '🏆 마켓랭킹', file: '마켓랭킹.html' },
+      { name: '👤 마이페이지', file: '마이페이지.html' },
+      { name: '🔑 로그인', file: '로그인.html' },
+      { name: '📱 관리자(앱)', file: '관리자모바일.html' },
+      { name: '💻 관리자(PC)', file: '관리자.html' }
+    ];
+    const helper = document.createElement('div');
+    helper.innerHTML = `
+      <div id="ux-nav-menu" style="display:none; position:fixed; bottom:85px; left:16px; z-index:9999; background:rgba(255,255,255,0.96); backdrop-filter:blur(12px); border:1px solid #EFE7DC; border-radius:16px; padding:10px; box-shadow:0 8px 28px rgba(46,43,42,0.15); width:165px; max-height:65vh; overflow-y:auto;">
+        <div style="font-size:11px; font-weight:700; color:#7C7571; padding:4px 8px 6px; border-bottom:1px solid #EFE7DC; margin-bottom:4px;">샘플1 화면 바로가기</div>
+        ${navPages.map(p => `<a href="${p.file}" style="display:block; padding:6px 8px; font-size:12px; font-weight:600; color:#2E2B2A; text-decoration:none; border-radius:8px;" onmouseover="this.style.background='#FDECE7';this.style.color='#a13e2e'" onmouseout="this.style.background='transparent';this.style.color='#2E2B2A'">${p.name}</a>`).join('')}
+      </div>
+      <button id="ux-nav-btn" title="전체 화면 이동 메뉴" style="position:fixed; bottom:80px; left:16px; z-index:9999; width:40px; height:40px; border-radius:9999px; background:#F47D68; color:#ffffff; border:none; box-shadow:0 4px 14px rgba(244,125,104,0.4); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:17px;">🧭</button>
+    `;
+    document.body.appendChild(helper);
+    const btn = document.getElementById('ux-nav-btn');
+    const menu = document.getElementById('ux-nav-menu');
+    btn.addEventListener('click', () => {
+      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+    });
+  }
+})();
+</script>
+
+</body></html>

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "text-charcoal": "#2E2B2A",
+        "inverse-primary": "#ffb4a6",
+        "on-secondary-container": "#2c6e4f",
+        "surface-container-high": "#ebe8e2",
+        "border-warm": "#EFE7DC",
+        "baby-peach": "#F47D68",
+        "tertiary-fixed-dim": "#fabb61",
+        "on-surface-variant": "#56423e",
+        "outline-variant": "#ddc0bb",
+        "primary-container": "#f47d68",
+        "surface-container-highest": "#e6e2dc",
+        "surface-dim": "#dddad4",
+        "on-tertiary-fixed-variant": "#633f00",
+        "on-primary-container": "#6b170b",
+        "sage-subtle": "#EBF4EF",
+        "on-tertiary": "#ffffff",
+        "tertiary": "#825500",
+        "text-subtle": "#7C7571",
+        "cream-ivory": "#FAF6F0",
+        "primary": "#a13e2e",
+        "on-secondary-fixed": "#002112",
+        "error-container": "#ffdad6",
+        "primary-fixed-dim": "#ffb4a6",
+        "on-error": "#ffffff",
+        "secondary-container": "#aaefc7",
+        "secondary": "#276a4b",
+        "on-error-container": "#93000a",
+        "secondary-fixed-dim": "#91d5af",
+        "on-background": "#1c1c18",
+        "secondary-fixed": "#adf1ca",
+        "surface": "#fdf9f3",
+        "outline": "#8a726d",
+        "error": "#ba1a1a",
+        "surface-container-low": "#f7f3ed",
+        "sage-mint": "#6CAE8A",
+        "on-primary-fixed": "#400200",
+        "surface-bright": "#fdf9f3",
+        "honey-subtle": "#FEF6E9",
+        "on-tertiary-fixed": "#291800",
+        "surface-container-lowest": "#ffffff",
+        "surface-variant": "#e6e2dc",
+        "peach-subtle": "#FDECE7",
+        "surface-tint": "#a13e2e",
+        "on-secondary-fixed-variant": "#045134",
+        "on-primary": "#ffffff",
+        "on-primary-fixed-variant": "#812719",
+        "inverse-on-surface": "#f4f0ea",
+        "tertiary-container": "#cf953f",
+        "inverse-surface": "#31302d",
+        "surface-container": "#f1ede7",
+        "background": "#fdf9f3",
+        "on-secondary": "#ffffff",
+        "primary-fixed": "#ffdad4",
+        "on-surface": "#1c1c18",
+        "surface-card": "#FFFFFF",
+        "tertiary-fixed": "#ffddb4",
+        "on-tertiary-container": "#4e3100",
+        "sun-honey": "#F7B85E"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "margin-desktop": "2rem",
+        "space-xl": "2rem",
+        "margin": "1rem",
+        "space-xs": "0.25rem",
+        "gutter-sm": "0.75rem",
+        "space-sm": "0.5rem",
+        "space-md": "1rem",
+        "gutter": "1rem",
+        "space-lg": "1.5rem"
+      },
+      "fontFamily": {
+        "label-sm": ["Plus Jakarta Sans"],
+        "body-lg": ["Plus Jakarta Sans"],
+        "body-sm": ["Plus Jakarta Sans"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "label-md": ["Plus Jakarta Sans"],
+        "display-mobile": ["Plus Jakarta Sans"],
+        "label-lg": ["Plus Jakarta Sans"],
+        "display-lg": ["Plus Jakarta Sans"],
+        "headline-md": ["Plus Jakarta Sans"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "body-md": ["Plus Jakarta Sans"]
+      },
+      "fontSize": {
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+        "display-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "headline-sm": ["17px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+        "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between py-6"><div class="flex flex-col"><div class="px-6 pb-6 flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-peach-subtle flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[24px]">child_friendly</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">아이봄 iBom</span><span class="font-label-sm text-label-sm text-text-subtle">통합 육아 관리 콘솔</span></div></div><div class="px-6 py-2"><span class="font-label-sm text-label-sm text-text-subtle uppercase tracking-wider">메인 메뉴</span></div><nav class="flex flex-col gap-1 px-4" data-active-classes="bg-peach-subtle text-primary font-label-lg"><a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors bg-peach-subtle text-primary font-label-lg" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span>대시보드</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="member-child-management" href="#"><span class="material-symbols-outlined text-[20px]">family_restroom</span>회원·자녀 데이터</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="community-moderation" href="#"><span class="material-symbols-outlined text-[20px]">forum</span>커뮤니티 모니터링</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="market-settlement" href="#"><span class="material-symbols-outlined text-[20px]">storefront</span>마켓·주문 정산</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="system-settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span>시스템 설정</a></nav></div><div class="px-4 flex flex-col gap-2"><div class="bg-surface-card rounded-xl p-3 shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-sage-subtle flex items-center justify-center text-secondary"><span class="material-symbols-outlined text-[20px]">verified_user</span></div><div class="flex flex-col flex-1"><span class="font-label-md text-label-md text-on-surface">보안 인증 완료</span><span class="font-label-sm text-label-sm text-text-subtle">관리자 최고 등급</span></div></div><div class="px-3 py-1 flex items-center justify-between text-text-subtle font-label-sm text-label-sm"><span>iBom Admin v2.4</span><span class="material-symbols-outlined text-[16px]">lock</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-8"><div class="flex items-center gap-3 bg-surface-container-low px-3 py-1.5 rounded-full w-80"><span class="material-symbols-outlined text-text-subtle text-[18px]">search</span><input class="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-text-subtle focus:outline-none w-full" placeholder="회원명, 주문번호, 신고 글 검색..." type="text"/></div><div class="flex items-center gap-4"><button class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span></button><button class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">help_outline</span></button><div class="h-6 w-px bg-surface-container-highest"></div><div class="flex items-center gap-3 pl-1"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface">김지원 총괄</span><span class="font-label-sm text-label-sm text-text-subtle">최고운영관리자</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-8 py-6"><div class="flex flex-col w-full gap-6">
+<!-- Top System Header & Quick Overview Strip -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-surface-card p-6 rounded-2xl shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-2xl bg-peach-subtle flex items-center justify-center text-baby-peach shadow-sm">
+<span class="material-symbols-outlined text-[28px]">manage_accounts</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2.5">
+<span class="font-headline-md text-headline-md text-text-charcoal tracking-tight">회원 및 영유아 데이터 콘솔</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            동기화 정상
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-subtle mt-0.5">실시간 육아 로그, 가구 구성 및 보호자 계정 통합 관제</p>
+</div>
+</div>
+<!-- Live Metric Pill Counters -->
+<div class="flex items-center gap-3 self-start md:self-auto">
+<div class="flex items-center gap-2 bg-surface-container-low px-3.5 py-2 rounded-xl text-text-charcoal">
+<span class="material-symbols-outlined text-baby-peach text-[18px]">sync</span>
+<span class="font-label-sm text-label-sm text-text-subtle">최종 갱신:</span>
+<span class="font-label-md text-label-md" id="live-time">14:32:08</span>
+</div>
+<button class="flex items-center gap-2 bg-peach-subtle hover:bg-baby-peach hover:text-on-primary transition-all text-baby-peach px-4 py-2 rounded-xl font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>데이터 내보내기 (CSV)</span>
+</button>
+</div>
+</div>
+<!-- 1. KPI Metric Summary Cards (4 Bento Tiles) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- KPI 1: 누적 회원수 -->
+<div class="bg-surface-card p-5 rounded-2xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-20 h-20 rounded-full bg-peach-subtle/50 pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-subtle">총 누적 회원수</span>
+<div class="w-8 h-8 rounded-lg bg-peach-subtle text-baby-peach flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">group</span>
+</div>
+</div>
+<div class="mt-4 flex flex-col">
+<span class="font-display-lg text-display-lg text-text-charcoal tracking-tight font-bold">48,290<span class="font-headline-sm text-headline-sm font-normal text-text-subtle ml-1">명</span></span>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="flex items-center text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+            +12.4%
+          </span>
+<span class="font-label-sm text-label-sm text-text-subtle">전월 대비 지속 성장</span>
+</div>
+</div>
+</div>
+<!-- KPI 2: 등록 영유아 자녀 -->
+<div class="bg-surface-card p-5 rounded-2xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-20 h-20 rounded-full bg-sage-subtle/60 pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-subtle">등록 자녀(영유아)</span>
+<div class="w-8 h-8 rounded-lg bg-sage-subtle text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">child_care</span>
+</div>
+</div>
+<div class="mt-4 flex flex-col">
+<span class="font-display-lg text-display-lg text-text-charcoal tracking-tight font-bold">52,140<span class="font-headline-sm text-headline-sm font-normal text-text-subtle ml-1">명</span></span>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            가구당 1.08명
+          </span>
+<span class="font-label-sm text-label-sm text-text-subtle">평균 월령 8.4개월</span>
+</div>
+</div>
+</div>
+<!-- KPI 3: 오늘 육아기록 -->
+<div class="bg-surface-card p-5 rounded-2xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-20 h-20 rounded-full bg-honey-subtle/80 pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-subtle">오늘 작성 육아기록</span>
+<div class="w-8 h-8 rounded-lg bg-honey-subtle text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+</div>
+</div>
+<div class="mt-4 flex flex-col">
+<span class="font-display-lg text-display-lg text-text-charcoal tracking-tight font-bold">142,390<span class="font-headline-sm text-headline-sm font-normal text-text-subtle ml-1">건</span></span>
+<div class="flex items-center gap-2 mt-2">
+<!-- Mini SVG Sparkline -->
+<svg class="w-20 h-4 text-baby-peach" fill="none" viewbox="0 0 100 20">
+<path d="M0 15 L20 12 L40 16 L60 8 L80 11 L100 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<span class="font-label-sm text-label-sm text-text-subtle">수유·수면·배변 활성</span>
+</div>
+</div>
+</div>
+<!-- KPI 4: 마켓 거래액 -->
+<div class="bg-surface-card p-5 rounded-2xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-20 h-20 rounded-full bg-peach-subtle/40 pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-subtle">마켓 일일 거래액</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+</div>
+<div class="mt-4 flex flex-col">
+<span class="font-display-lg text-display-lg text-text-charcoal tracking-tight font-bold">34,800,000<span class="font-headline-sm text-headline-sm font-normal text-text-subtle ml-1">원</span></span>
+<div class="flex items-center gap-2 mt-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-honey-subtle text-tertiary font-label-sm text-label-sm">
+            정산 대기 12건
+          </span>
+<span class="font-label-sm text-label-sm text-text-subtle">취소율 0.2%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Asymmetric Workspace Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+<!-- 2. 회원 및 자녀 상세 관리 테이블 (9 Columns on XL) -->
+<section class="xl:col-span-9 bg-surface-card rounded-2xl shadow-sm p-6 flex flex-col gap-5">
+<!-- Filter Toolbar -->
+<div class="flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-charcoal font-semibold">회원 및 자녀 데이터 목록</span>
+<span class="px-2.5 py-0.5 rounded-full bg-peach-subtle text-primary font-label-sm text-label-sm">전체 48,290건</span>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-low hover:bg-surface-container font-label-md text-label-md text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+              필터 초기화
+            </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:opacity-95 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">add</span>
+              신규 회원 등록
+            </button>
+</div>
+</div>
+<!-- Filter Input Strips -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 pt-2">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-subtle">보호자명/휴대폰</label>
+<input class="w-full bg-surface-container-low rounded-xl px-3 py-2 font-body-sm text-body-sm text-on-surface placeholder:text-text-subtle/70 focus:outline-none focus:ring-2 focus:ring-baby-peach" placeholder="김서현, 010-****" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-subtle">아기 월령대</label>
+<select class="w-full bg-surface-container-low rounded-xl px-2.5 py-2 font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-baby-peach">
+<option value="">전체 월령</option>
+<option value="0-6">신생아~6개월</option>
+<option value="7-12">7~12개월</option>
+<option value="13-24">13~24개월</option>
+<option value="25+">25개월 이상</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-subtle">거주 지역(시/구)</label>
+<select class="w-full bg-surface-container-low rounded-xl px-2.5 py-2 font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-baby-peach">
+<option value="">서울 전체</option>
+<option value="seongdong">성동구</option>
+<option value="gangnam">강남구</option>
+<option value="mapo">마포구</option>
+<option value="songpa">송파구</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-subtle">가입 수단</label>
+<select class="w-full bg-surface-container-low rounded-xl px-2.5 py-2 font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-baby-peach">
+<option value="">전체 수단</option>
+<option value="kakao">카카오 간편가입</option>
+<option value="apple">애플 로그인</option>
+<option value="naver">네이버</option>
+<option value="email">이메일</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-subtle">계정 상태</label>
+<select class="w-full bg-surface-container-low rounded-xl px-2.5 py-2 font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-baby-peach">
+<option value="">전체 상태</option>
+<option value="active">정상 활성</option>
+<option value="dormant">휴면</option>
+<option value="restricted">이용 제한</option>
+</select>
+</div>
+<div class="flex flex-col justify-end">
+<button class="w-full bg-peach-subtle text-baby-peach hover:bg-baby-peach hover:text-on-primary py-2 rounded-xl font-label-md text-label-md flex items-center justify-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[16px]">search</span>
+<span>조건 검색</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Data Grid Table -->
+<div class="overflow-x-auto -mx-6 px-6">
+<table class="w-full text-left border-collapse min-w-[920px]">
+<thead>
+<tr class="bg-surface-container-low/70 rounded-xl">
+<th class="py-3 px-3.5 font-label-sm text-label-sm text-text-subtle rounded-l-xl">회원 / 보호자</th>
+<th class="py-3 px-3.5 font-label-sm text-label-sm text-text-subtle">연락처 / 연동</th>
+<th class="py-3 px-3.5 font-label-sm text-label-sm text-text-subtle">등록 자녀(영유아) 정보</th>
+<th class="py-3 px-3.5 font-label-sm text-label-sm text-text-subtle">거주 지역</th>
+<th class="py-3 px-3.5 font-label-sm text-label-sm text-text-subtle">활동 메트릭</th>
+<th class="py-3 px-3.5 font-label-sm text-label-sm text-text-subtle">상태</th>
+<th class="py-3 px-3.5 font-label-sm text-label-sm text-text-subtle text-right rounded-r-xl">관리 액션</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 (Highlight User from prompt) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-3.5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-peach-subtle flex items-center justify-center text-baby-peach font-bold font-label-md text-label-md">
+                    서현
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-text-charcoal font-semibold">김서현</span>
+<span class="font-label-sm text-label-sm text-text-subtle">#U1024</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-text-charcoal">010-****-1234</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-sun-honey"></span>
+                    카카오 연동
+                  </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-peach-subtle text-primary font-label-sm text-label-sm font-semibold">서아 (여)</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-text-charcoal font-medium">생후 6개월</span>
+<span class="font-label-sm text-label-sm text-text-subtle">2024.03.15 출생</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3.5 font-body-sm text-body-sm text-text-charcoal">
+                서울시 성동구 옥수동
+              </td>
+<td class="py-3.5 px-3.5">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-sage-subtle text-secondary font-label-sm text-label-sm">
+                    기록 184일 연속
+                  </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-text-subtle font-label-sm text-label-sm">
+                    글 12
+                  </span>
+<span class="px-2 py-0.5 rounded-full bg-honey-subtle text-tertiary font-label-sm text-label-sm">
+                    주문 8건
+                  </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  정상 활성
+                </span>
+</td>
+<td class="py-3.5 px-3.5 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors" title="상세보기">
+                    상세보기
+                  </button>
+<button class="px-2.5 py-1 rounded-lg bg-peach-subtle hover:bg-baby-peach hover:text-on-primary font-label-sm text-label-sm text-baby-peach transition-colors" title="자녀 데이터 수정">
+                    자녀 수정
+                  </button>
+<button class="p-1 rounded-lg hover:bg-error-container hover:text-on-error-container text-text-subtle transition-colors" title="이용제한 설정">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-3.5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-sage-subtle flex items-center justify-center text-secondary font-bold font-label-md text-label-md">
+                    도윤
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-text-charcoal font-semibold">이도윤</span>
+<span class="font-label-sm text-label-sm text-text-subtle">#U1025</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-text-charcoal">010-****-9821</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-text-subtle"></span>
+                    애플 연동
+                  </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-sage-subtle text-secondary font-label-sm text-label-sm font-semibold">하람 (남)</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-text-charcoal font-medium">생후 11개월</span>
+<span class="font-label-sm text-label-sm text-text-subtle">2023.10.02 출생</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3.5 font-body-sm text-body-sm text-text-charcoal">
+                서울시 마포구 공덕동
+              </td>
+<td class="py-3.5 px-3.5">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-sage-subtle text-secondary font-label-sm text-label-sm">
+                    기록 92일 연속
+                  </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-text-subtle font-label-sm text-label-sm">
+                    글 34
+                  </span>
+<span class="px-2 py-0.5 rounded-full bg-honey-subtle text-tertiary font-label-sm text-label-sm">
+                    주문 19건
+                  </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  정상 활성
+                </span>
+</td>
+<td class="py-3.5 px-3.5 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors">
+                    상세보기
+                  </button>
+<button class="px-2.5 py-1 rounded-lg bg-peach-subtle hover:bg-baby-peach hover:text-on-primary font-label-sm text-label-sm text-baby-peach transition-colors">
+                    자녀 수정
+                  </button>
+<button class="p-1 rounded-lg hover:bg-error-container hover:text-on-error-container text-text-subtle transition-colors">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 (Multi-Child Profile) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-3.5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-honey-subtle flex items-center justify-center text-tertiary font-bold font-label-md text-label-md">
+                    지민
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-text-charcoal font-semibold">박지민</span>
+<span class="font-label-sm text-label-sm text-text-subtle">#U1026</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-text-charcoal">010-****-5541</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    네이버 연동
+                  </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-honey-subtle text-tertiary font-label-sm text-label-sm font-semibold">쌍둥이 (2명)</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-text-charcoal font-medium">유준, 유나 (남/여)</span>
+<span class="font-label-sm text-label-sm text-text-subtle">생후 3개월 (2024.06.11)</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3.5 font-body-sm text-body-sm text-text-charcoal">
+                서울시 강남구 역삼동
+              </td>
+<td class="py-3.5 px-3.5">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-sage-subtle text-secondary font-label-sm text-label-sm">
+                    기록 76일 연속
+                  </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-text-subtle font-label-sm text-label-sm">
+                    글 8
+                  </span>
+<span class="px-2 py-0.5 rounded-full bg-honey-subtle text-tertiary font-label-sm text-label-sm">
+                    주문 3건
+                  </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  정상 활성
+                </span>
+</td>
+<td class="py-3.5 px-3.5 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors">
+                    상세보기
+                  </button>
+<button class="px-2.5 py-1 rounded-lg bg-peach-subtle hover:bg-baby-peach hover:text-on-primary font-label-sm text-label-sm text-baby-peach transition-colors">
+                    자녀 수정
+                  </button>
+<button class="p-1 rounded-lg hover:bg-error-container hover:text-on-error-container text-text-subtle transition-colors">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 (Reported User / Restricted Action Target) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-peach-subtle/20 group">
+<td class="py-3.5 px-3.5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-error-container flex items-center justify-center text-error font-bold font-label-md text-label-md">
+                    태양
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-text-charcoal font-semibold">강태양</span>
+<span class="font-label-sm text-label-sm text-error font-medium">#U1027 (모니터링)</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-text-charcoal">010-****-7719</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-text-subtle">
+<span class="w-1.5 h-1.5 rounded-full bg-text-subtle"></span>
+                    이메일 가입
+                  </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-highest text-text-subtle font-label-sm text-label-sm">미등록</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-text-subtle">임신 중 / 준비 회원</span>
+<span class="font-label-sm text-label-sm text-text-subtle">출산 예정: 2024.12</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3.5 font-body-sm text-body-sm text-text-charcoal">
+                경기도 성남시 분당구
+              </td>
+<td class="py-3.5 px-3.5">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-error font-label-sm text-label-sm">
+                    신고 접수 1건
+                  </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-text-subtle font-label-sm text-label-sm">
+                    글 42
+                  </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-text-subtle font-label-sm text-label-sm">
+                    주문 0건
+                  </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                  심사 대기
+                </span>
+</td>
+<td class="py-3.5 px-3.5 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors">
+                    상세보기
+                  </button>
+<button class="px-2.5 py-1 rounded-lg bg-primary text-on-primary hover:opacity-90 font-label-sm text-label-sm font-semibold transition-opacity">
+                    이용제한
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-3.5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-peach-subtle flex items-center justify-center text-baby-peach font-bold font-label-md text-label-md">
+                    수진
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-text-charcoal font-semibold">최수진</span>
+<span class="font-label-sm text-label-sm text-text-subtle">#U1028</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-text-charcoal">010-****-3310</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-sun-honey"></span>
+                    카카오 연동
+                  </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-peach-subtle text-primary font-label-sm text-label-sm font-semibold">시우 (남)</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-text-charcoal font-medium">생후 18개월</span>
+<span class="font-label-sm text-label-sm text-text-subtle">2023.03.20 출생</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3.5 font-body-sm text-body-sm text-text-charcoal">
+                서울시 송파구 잠실동
+              </td>
+<td class="py-3.5 px-3.5">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-sage-subtle text-secondary font-label-sm text-label-sm">
+                    기록 220일 연속
+                  </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-text-subtle font-label-sm text-label-sm">
+                    글 5
+                  </span>
+<span class="px-2 py-0.5 rounded-full bg-honey-subtle text-tertiary font-label-sm text-label-sm">
+                    주문 14건
+                  </span>
+</div>
+</td>
+<td class="py-3.5 px-3.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  정상 활성
+                </span>
+</td>
+<td class="py-3.5 px-3.5 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors">
+                    상세보기
+                  </button>
+<button class="px-2.5 py-1 rounded-lg bg-peach-subtle hover:bg-baby-peach hover:text-on-primary font-label-sm text-label-sm text-baby-peach transition-colors">
+                    자녀 수정
+                  </button>
+<button class="p-1 rounded-lg hover:bg-error-container hover:text-on-error-container text-text-subtle transition-colors">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Table Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-3">
+<span class="font-label-sm text-label-sm text-text-subtle">
+          1-5 표시 중 / 총 48,290개 보호자 계정
+        </span>
+<div class="flex items-center gap-1.5">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-text-subtle hover:bg-surface-container disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-baby-peach text-on-primary font-label-md text-label-md font-semibold">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low font-label-md text-label-md text-on-surface">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low font-label-md text-label-md text-on-surface">3</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low font-label-md text-label-md text-on-surface">4</button>
+<span class="px-1 text-text-subtle font-label-sm">...</span>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low font-label-md text-label-md text-on-surface">966</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 3. 우측 서브 위젯 (3 Columns on XL) -->
+<aside class="xl:col-span-3 flex flex-col gap-6">
+<!-- Widget A: 실시간 이상 징후 & 신고 현황 -->
+<div class="bg-surface-card rounded-2xl shadow-sm p-5 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></div>
+<span class="font-headline-sm text-headline-sm text-text-charcoal font-semibold">실시간 이상 징후</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">1건 처리 대기</span>
+</div>
+<div class="bg-peach-subtle/50 rounded-xl p-4 flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-error text-on-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">report</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-text-charcoal font-semibold truncate">커뮤니티 광고/스팸 의심 탐지</span>
+<span class="font-label-sm text-label-sm text-text-subtle mt-0.5">작성자: 강태양 (#U1027)</span>
+</div>
+</div>
+<div class="bg-surface-card rounded-lg p-2.5 text-body-sm font-body-sm text-on-surface-variant line-clamp-2">
+            "해외 직구 분유 초특가 50% 할인 링크 공유합니다! 카카오톡 오픈채팅..."
+          </div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-text-subtle pt-1">
+<span>AI 필터 자동 감지</span>
+<span class="text-error font-medium">위험도 94%</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="py-2 px-3 rounded-lg bg-primary text-on-primary hover:opacity-95 font-label-md text-label-md transition-opacity">
+              즉시 차단/제한
+            </button>
+<button class="py-2 px-3 rounded-lg bg-surface-card hover:bg-surface-container font-label-md text-label-md text-text-charcoal transition-colors">
+              게시글 보기
+            </button>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low text-text-charcoal">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+<span class="font-body-sm text-body-sm">자동 모니터링 룰셋</span>
+</div>
+<span class="font-label-md text-label-md text-secondary">활성화 중 (v4.2)</span>
+</div>
+</div>
+<!-- Widget B: 월령별 자녀 분포 비율 -->
+<div class="bg-surface-card rounded-2xl shadow-sm p-5 flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-text-charcoal font-semibold">월령별 자녀 분포</span>
+<span class="font-label-sm text-label-sm text-text-subtle">전체 등록 영유아 52,140명 기준</span>
+</div>
+<span class="material-symbols-outlined text-text-subtle text-[20px]">pie_chart</span>
+</div>
+<!-- Donut Visualization SVG (Lightweight <2KB) -->
+<div class="flex items-center justify-center relative py-2">
+<svg class="w-40 h-40 transform -rotate-90" viewbox="0 0 120 120">
+<!-- Background circle -->
+<circle class="text-surface-container" cx="60" cy="60" fill="none" r="48" stroke="currentColor" stroke-width="14"></circle>
+<!-- Segment 1: 0~6개월 (38%) -> stroke-dasharray: 114.6 187 -->
+<circle class="text-baby-peach" cx="60" cy="60" fill="none" r="48" stroke="currentColor" stroke-dasharray="114.6 187" stroke-dashoffset="0" stroke-width="14"></circle>
+<!-- Segment 2: 7~12개월 (42%) -> stroke-dasharray: 126.6 175 -->
+<circle class="text-sage-mint" cx="60" cy="60" fill="none" r="48" stroke="currentColor" stroke-dasharray="126.6 175" stroke-dashoffset="-114.6" stroke-width="14"></circle>
+<!-- Segment 3: 13~24개월 (20%) -> stroke-dasharray: 60.3 241 -->
+<circle class="text-sun-honey" cx="60" cy="60" fill="none" r="48" stroke="currentColor" stroke-dasharray="60.3 241" stroke-dashoffset="-241.2" stroke-width="14"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-label-sm text-label-sm text-text-subtle">최다 월령</span>
+<span class="font-headline-md text-headline-md text-text-charcoal font-bold">7~12개월</span>
+</div>
+</div>
+<!-- Progress Bar Breakdown -->
+<div class="flex flex-col gap-3.5 pt-1">
+<!-- Item 1: 0~6개월 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-baby-peach"></span>
+<span class="text-text-charcoal font-medium">0~6개월 (신생아/수유기)</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-text-charcoal">38% <span class="font-normal text-text-subtle">(19,813명)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-baby-peach rounded-full" style="width: 38%"></div>
+</div>
+</div>
+<!-- Item 2: 7~12개월 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-sage-mint"></span>
+<span class="text-text-charcoal font-medium">7~12개월 (이유식/첫걸음)</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-text-charcoal">42% <span class="font-normal text-text-subtle">(21,898명)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-sage-mint rounded-full" style="width: 42%"></div>
+</div>
+</div>
+<!-- Item 3: 13~24개월 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-sun-honey"></span>
+<span class="text-text-charcoal font-medium">13~24개월 (유아식/활동기)</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-text-charcoal">20% <span class="font-normal text-text-subtle">(10,429명)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-sun-honey rounded-full" style="width: 20%"></div>
+</div>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container font-label-md text-label-md text-text-charcoal flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">insights</span>
+<span>월령별 맞춤 추천 알고리즘 설정</span>
+</button>
+</div>
+</div>
+<!-- Quick Action Care Banner -->
+<div class="rounded-2xl bg-gradient-to-br from-peach-subtle to-honey-subtle p-5 flex flex-col gap-3 relative overflow-hidden">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">health_and_safety</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">정기 예방접종 알림 발송 현황</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-charcoal">
+          이번 주 생후 4개월 DTaP-IPV 2차 대상 영유아 1,420가구에 맞춤형 카카오 알림톡이 자동 예약되었습니다.
+        </p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-text-subtle">전송 성공률 99.8%</span>
+<button class="font-label-md text-label-md text-primary hover:underline font-semibold flex items-center">
+            세부 설정 <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  // Live Dashboard Clock Micro-Interaction
+  function updateDashboardClock() {
+    const clockEl = document.getElementById('live-time');
+    if (clockEl) {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      clockEl.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+  }
+  setInterval(updateDashboardClock, 1000);
+</script></main></div>
+<script id="ibom-sample1-router">
+(function() {
+  function go(page) {
+    if (window.parent && window.parent.navigateSample1) {
+      window.parent.navigateSample1(page);
+    } else {
+      window.location.href = page;
+    }
+  }
+
+  // 1. data-path 속성 기반 자동 매핑 (하단 네비게이션 바 & 헤더 & 관리자 메뉴)
+  const pathMap = {
+    'home': '홈.html',
+    'baby-log-home': '육아기록.html',
+    'community': '커뮤.html',
+    'community-feed': '커뮤.html',
+    'outing-map': '지도.html',
+    'market': '마켓.html',
+    'market-shop': '마켓.html',
+    'my-page': '마이페이지.html',
+    'mypage-settings': '마이페이지.html',
+    'baby-growth': '아기.html',
+    'dashboard': '관리자.html',
+    'member-child-management': '아기.html',
+    'community-moderation': '커뮤.html',
+    'market-settlement': '마켓.html',
+    'place-store-manager': '지도.html',
+    'logs-monitoring': '육아기록.html',
+    'system-settings': '관리자모바일.html'
+  };
+
+  document.querySelectorAll('[data-path]').forEach(el => {
+    const key = el.getAttribute('data-path');
+    if (pathMap[key]) {
+      if (el.tagName === 'A') el.setAttribute('href', pathMap[key]);
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        go(pathMap[key]);
+      });
+    }
+  });
+
+  // 2. 상단 헤더 공통 연결 (로고 -> 홈, 알림 -> 일정, 프로필 -> 마이페이지, 뒤로가기)
+  const header = document.querySelector('header');
+  if (header) {
+    const logoArea = header.querySelector('.flex.items-center.gap-space-sm, .flex.items-center.gap-3');
+    if (logoArea && !logoArea.querySelector('button')) {
+      logoArea.style.cursor = 'pointer';
+      logoArea.addEventListener('click', () => go('홈.html'));
+    }
+    header.querySelectorAll('button').forEach(btn => {
+      if (btn.innerText.includes('notifications')) {
+        btn.addEventListener('click', (e) => { e.preventDefault(); go('일정.html'); });
+      }
+      if (btn.getAttribute('aria-label') && btn.getAttribute('aria-label').includes('뒤로')) {
+        btn.onclick = (e) => {
+          e.preventDefault();
+          if (window.parent && window.parent.navigateBackSample1) {
+            window.parent.navigateBackSample1();
+          } else if (history.length > 1) {
+            history.back();
+          } else {
+            go('홈.html');
+          }
+        };
+      }
+    });
+    header.querySelectorAll('span.material-symbols-outlined').forEach(span => {
+      if (span.innerText.trim() === 'person') {
+        const parent = span.closest('div, a, button');
+        if (parent) {
+          parent.style.cursor = 'pointer';
+          parent.addEventListener('click', (e) => { e.preventDefault(); go('마이페이지.html'); });
+        }
+      }
+    });
+  }
+
+  // 3. 페이지별 세부 버튼 & 카드 자동 연결
+  document.querySelectorAll('button, a, section, div').forEach(el => {
+    const text = (el.innerText || '').trim();
+    const aria = el.getAttribute('aria-label') || '';
+
+    // [로그인.html]
+    if (el.id === 'login-btn' || (el.tagName === 'BUTTON' && (
+      text.includes('카카오로 3초 만에 시작하기') ||
+      text.includes('네이버로 시작하기') ||
+      text.includes('Apple로 로그인') ||
+      text.includes('먼저 둘러보기')
+    ))) {
+      el.addEventListener('click', () => go('홈.html'));
+    }
+    if (text.includes('1분만에 가입하고 육아 축하 웰컴팩 받기')) {
+      el.addEventListener('click', () => go('아기.html'));
+    }
+
+    // [아기.html]
+    if (el.id === 'submitBtn') {
+      el.onclick = (e) => {
+        e.preventDefault();
+        el.innerHTML = '<span class="material-symbols-outlined text-on-primary animate-spin text-[20px]">progress_activity</span><span class="text-on-primary font-headline-sm text-headline-sm font-bold">아이맞춤 환경 구성 중...</span>';
+        setTimeout(() => go('홈.html'), 600);
+      };
+    }
+
+    // [홈.html]
+    if (el.tagName === 'BUTTON' && text.includes('육아기록') && text.includes('빠른입력')) el.addEventListener('click', () => go('육아기록.html'));
+    if (el.tagName === 'BUTTON' && text.includes('동네톡') && text.includes('성동구')) el.addEventListener('click', () => go('커뮤.html'));
+    if (el.tagName === 'BUTTON' && text.includes('나들이지도') && text.includes('키즈존추천')) el.addEventListener('click', () => go('지도.html'));
+    if (el.tagName === 'BUTTON' && text.includes('육아마켓') && text.includes('득템찬스')) el.addEventListener('click', () => go('마켓.html'));
+    if (text === '생후 6개월차 chevron_right' || text === '오늘 우리 아이 브리핑') {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => go('육아기록.html'));
+    }
+    if (text.includes('1:1 이웃 챗 시작') && el.tagName === 'DIV') {
+      el.addEventListener('click', () => go('친구.html'));
+    }
+    if (text.includes('동네 모임방 만들기') && el.tagName === 'DIV') {
+      el.addEventListener('click', () => go('커뮤.html'));
+    }
+
+    // [육아기록.html]
+    if (text.includes('B형간염 3차 정기 접종일이에요') && el.tagName === 'SECTION') {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => go('일정.html'));
+    }
+    if (text.includes('우리 아기 성장 발달 곡선 확인하기') && el.tagName === 'DIV') {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => go('아기.html'));
+    }
+
+    // [일정.html]
+    if (aria === '아이 변경') {
+      el.addEventListener('click', () => go('아기.html'));
+    }
+
+    // [커뮤.html]
+    if (text.includes('동네 육아맘 2,410명 활동 중')) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => go('친구.html'));
+    }
+
+    // [마켓.html & 마켓랭킹.html]
+    if (text === '실시간 TOP' || (el.tagName === 'BUTTON' && text.includes('인기순')) || (el.tagName === 'BUTTON' && text.includes('룩북 구경'))) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => go('마켓랭킹.html'));
+    }
+    if (el.tagName === 'BUTTON' && text === '조회하기') {
+      el.addEventListener('click', () => go('아기.html'));
+    }
+    if (el.tagName === 'BUTTON' && text.includes('전체보기') && document.title.includes('Market')) {
+      el.addEventListener('click', () => go('마켓.html'));
+    }
+
+    // [마이페이지.html]
+    if (el.getAttribute('title') === '아기 추가' || el.id === 'babySwitchBtn') {
+      el.addEventListener('click', () => go('아기.html'));
+    }
+    if (aria === '프로필 편집') {
+      el.addEventListener('click', () => go('관리자모바일.html'));
+    }
+    if (el.tagName === 'BUTTON' && text === '로그아웃') {
+      el.addEventListener('click', () => go('로그인.html'));
+    }
+    if (el.tagName === 'A' && (text.includes('찜한 상품') || text.includes('최근 본 상품'))) {
+      el.setAttribute('href', '마켓랭킹.html');
+      el.addEventListener('click', (e) => { e.preventDefault(); go('마켓랭킹.html'); });
+    }
+    if (el.tagName === 'A' && (text.includes('작성 가능한 리뷰') || text.includes('나눔/판매 내역'))) {
+      el.setAttribute('href', '커뮤.html');
+      el.addEventListener('click', (e) => { e.preventDefault(); go('커뮤.html'); });
+    }
+  });
+
+  // 4. 단독 실행 시에도 언제든 모든 화면으로 점프할 수 있는 플로팅 퀵 메뉴 (iframe 내부가 아닐 때만 표시)
+  if (window.self === window.top) {
+    const navPages = [
+      { name: '🏠 홈', file: '홈.html' },
+      { name: '🍼 육아기록', file: '육아기록.html' },
+      { name: '📅 일정/알람', file: '일정.html' },
+      { name: '👶 아기등록', file: '아기.html' },
+      { name: '💬 커뮤니티', file: '커뮤.html' },
+      { name: '🤝 육아친구', file: '친구.html' },
+      { name: '🗺️ 나들이지도', file: '지도.html' },
+      { name: '🛍️ 마켓', file: '마켓.html' },
+      { name: '🏆 마켓랭킹', file: '마켓랭킹.html' },
+      { name: '👤 마이페이지', file: '마이페이지.html' },
+      { name: '🔑 로그인', file: '로그인.html' },
+      { name: '📱 관리자(앱)', file: '관리자모바일.html' },
+      { name: '💻 관리자(PC)', file: '관리자.html' }
+    ];
+    const helper = document.createElement('div');
+    helper.innerHTML = `
+      <div id="ux-nav-menu" style="display:none; position:fixed; bottom:85px; left:16px; z-index:9999; background:rgba(255,255,255,0.96); backdrop-filter:blur(12px); border:1px solid #EFE7DC; border-radius:16px; padding:10px; box-shadow:0 8px 28px rgba(46,43,42,0.15); width:165px; max-height:65vh; overflow-y:auto;">
+        <div style="font-size:11px; font-weight:700; color:#7C7571; padding:4px 8px 6px; border-bottom:1px solid #EFE7DC; margin-bottom:4px;">샘플1 화면 바로가기</div>
+        ${navPages.map(p => `<a href="${p.file}" style="display:block; padding:6px 8px; font-size:12px; font-weight:600; color:#2E2B2A; text-decoration:none; border-radius:8px;" onmouseover="this.style.background='#FDECE7';this.style.color='#a13e2e'" onmouseout="this.style.background='transparent';this.style.color='#2E2B2A'">${p.name}</a>`).join('')}
+      </div>
+      <button id="ux-nav-btn" title="전체 화면 이동 메뉴" style="position:fixed; bottom:80px; left:16px; z-index:9999; width:40px; height:40px; border-radius:9999px; background:#F47D68; color:#ffffff; border:none; box-shadow:0 4px 14px rgba(244,125,104,0.4); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:17px;">🧭</button>
+    `;
+    document.body.appendChild(helper);
+    const btn = document.getElementById('ux-nav-btn');
+    const menu = document.getElementById('ux-nav-menu');
+    btn.addEventListener('click', () => {
+      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+    });
+  }
+})();
+</script>
+
+</body></html>
